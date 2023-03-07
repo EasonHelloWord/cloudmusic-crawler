@@ -185,7 +185,6 @@ if __name__ == "__main__":
             t = threading.Thread(target=start, args=(x, y))
             threads.append(t)
             t.start()
-            time.sleep(1.2)
         for t in threads:
             t.join()
         first_item = id_list.pop(0)
