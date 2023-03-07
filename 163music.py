@@ -185,6 +185,7 @@ if __name__ == "__main__":
             t = threading.Thread(target=start, args=(x, y))
             threads.append(t)
             t.start()
+            time.sleep(1.2)
         for t in threads:
             t.join()
         first_item = id_list.pop(0)
@@ -210,7 +211,6 @@ if __name__ == "__main__":
 
 
 
-        time.sleep(10000)
-        with open('list.txt', 'r') as f:
+        with open('list.txt', 'w') as f:
             content = f.write(id_list)
         print("完成：", first_item)
